@@ -1,4 +1,10 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React from "react";
 import Header from "../screenComponent/List/Header";
 import ButtonGroup from "../screenComponent/List/ButtonGroup";
@@ -7,10 +13,10 @@ import CardAnimal from "../screenComponent/Home/CardAnimal";
 
 const ListAnimal = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1, height: "140%" }}>
       <ImageBackground
         source={require("../storages/background/list.png")}
-        style={{ paddingBottom: 100, height: "100%" }}
+        style={{ paddingBottom: 100, height: "140%" }}
       >
         <View>
           <Header />
@@ -19,7 +25,7 @@ const ListAnimal = () => {
           <ButtonGroup />
         </View>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 };
 
