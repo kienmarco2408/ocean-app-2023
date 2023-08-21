@@ -1,13 +1,19 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../screen/Home";
+
 import Explore from "../screen/Explore";
 import Quiz from "../screen/Quiz";
 import Saved from "../screen/Saved";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import ListAnimal from "../screen/listAnimal";
+import ListAnimal from "../screen/List/listAnimal";
+import Status from "../screenComponent/Home/Status";
+import Home from "../screen/Home/Home";
+import DetailList from "../screen/List/DetailList";
+import DetailNews from "../screen/DetailNews";
+import DetailCategory from "../screen/DetailCategory";
+import DetailAnimal from "../screen/DetailAnimal";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -31,6 +37,7 @@ function ListStacks() {
   return (
     <ListStack.Navigator screenOptions={{ headerShown: false }}>
       <ListStack.Screen name="ListStack" component={ListAnimal} />
+      <ListStack.Screen name="DetailCategory" component={DetailCategory} />
     </ListStack.Navigator>
   );
 }
@@ -263,6 +270,10 @@ const Stack = () => {
     <NavigationContainer>
       <Stacks.Navigator screenOptions={{ headerShown: false }}>
         <Stacks.Screen name="Tabs" component={Tabs} />
+        <Stacks.Screen name="Status" component={Status} />
+        <Stacks.Screen name="DetailList" component={DetailList} />
+        <Stacks.Screen name="DetailNews" component={DetailNews} />
+        <Stacks.Screen name="DetailAnimal" component={DetailAnimal} />
       </Stacks.Navigator>
     </NavigationContainer>
   );

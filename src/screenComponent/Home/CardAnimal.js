@@ -1,11 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Image } from "react-native";
 import { LinearGradient } from "react-native-svg";
+import { useNavigation } from "@react-navigation/native";
 
 const CardAnimal = () => {
+  const navigation = useNavigation();
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => navigation.navigate("DetailCategory")}
       style={{
         width: 370,
         height: 131,
@@ -50,7 +53,7 @@ const CardAnimal = () => {
           }}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

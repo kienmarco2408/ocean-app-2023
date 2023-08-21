@@ -1,8 +1,17 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useState } from "react";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { Modal } from "react-native-paper";
 
-const Header = () => {
+const Header = ({ openModal }) => {
+  const navigation = useNavigation();
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (text) => {
@@ -43,7 +52,7 @@ const Header = () => {
           />
         </View>
 
-        <AntDesign name="filter" size={40} color="white" />
+        <AntDesign name="filter" size={40} color="white" onPress={openModal} />
       </View>
     </View>
   );

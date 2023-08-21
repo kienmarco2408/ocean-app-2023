@@ -1,10 +1,12 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const CardNews = () => {
+  const navigation = useNavigation();
   return (
-    <View>
+    <TouchableOpacity onPress={() => navigation.navigate("DetailNews")}>
       <View
         style={{
           width: 250,
@@ -69,7 +71,7 @@ const CardNews = () => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -1,10 +1,15 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Foundation } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Card = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{ position: "relative" }}>
+    <TouchableOpacity
+      style={{ position: "relative" }}
+      onPress={() => navigation.navigate("DetailList")}
+    >
       <Image
         source={require("../../storages/animal/rua.png")}
         style={{
@@ -72,7 +77,7 @@ const Card = () => {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

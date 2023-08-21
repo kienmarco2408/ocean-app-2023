@@ -1,11 +1,14 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Foundation } from "@expo/vector-icons";
 import Svg, { Defs, LinearGradient, Stop, Rect } from "react-native-svg";
+import { useNavigation } from "@react-navigation/native";
 
 const CardSaved = () => {
+  const navigation = useNavigation();
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => navigation.navigate("DetailAnimal")}
       style={{
         width: 163,
         height: 200,
@@ -32,6 +35,16 @@ const CardSaved = () => {
       <Image
         source={require("../../storages/animal/rua.png")}
         style={{ width: 147, height: 134, borderRadius: 10, marginTop: 7 }}
+      />
+      <Image
+        source={require("../../storages/icon/heart.png")}
+        style={{
+          position: "absolute",
+          top: 11,
+          right: 12,
+          width: 26,
+          height: 26,
+        }}
       />
       <View style={{ width: 147, height: 43, marginTop: 7 }}>
         <Text style={{ color: "#03174A", fontWeight: "700" }}>
@@ -66,7 +79,7 @@ const CardSaved = () => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
